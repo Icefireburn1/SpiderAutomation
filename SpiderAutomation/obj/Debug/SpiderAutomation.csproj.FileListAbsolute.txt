@@ -1,0 +1,13 @@
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\bin\Debug\SpiderAutomation.exe.config
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\bin\Debug\SpiderAutomation.exe
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\bin\Debug\SpiderAutomation.pdb
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.csprojAssemblyReference.cache
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.Form1.resources
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.Properties.Resources.resources
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.csproj.GenerateResource.cache
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.csproj.CoreCompileInputs.cache
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.exe
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.pdb
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\bin\Debug\heylisten.wav
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\bin\Debug\WindowsBase.dll
+C:\Users\Justin\source\repos\SpiderAutomation\SpiderAutomation\obj\Debug\SpiderAutomation.csproj.CopyComplete
