@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -420,6 +421,77 @@ namespace SpiderAutomation
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label1.Text = "Volume: " + trackBar1.Value + "%";
+        }
+
+        private void saveConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveConfig s = new SaveConfig(locations, questInProgressColor, questInProgressColor);
+
+            saveFileDialog1.Filter = "JSON File|*.json";
+            saveFileDialog1.Title = "Save a JSON File";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (saveFileDialog1.FileName != string.Empty)
+                {
+
+                    using (StreamWriter file = File.CreateText(saveFileDialog1.FileName))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        serializer.Serialize(file, s);
+                    }
+                }
+            }
+        }
+
+        private void openConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Label l in customLabels)
+            {
+                pictureBox1.Controls.Remove(l);
+            }
+            customLabels.Clear();
+            locations.Clear();
+
+
+
+
+
+            openFileDialog1.Filter = "JSON File|*.json";
+            openFileDialog1.Title = "Open a JSON File";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog1.FileName != string.Empty)
+                {
+                    using (StreamReader r = new StreamReader(openFileDialog1.FileName))
+                    {
+                        string json = r.ReadToEnd();
+                        SaveConfig s = JsonConvert.DeserializeObject<SaveConfig>(json);
+
+                        int index = 0;
+                        foreach (Vector2 foundLocation in s.locations)
+                        {
+                            // Create visual for clicks
+                            Label label = new Label();
+                            label.AutoSize = true;
+                            label.Font = new Font("Calibri", 16);
+                            label.ForeColor = Color.White;
+                            label.BackColor = Color.Black;
+                            label.BringToFront();
+                            label.Padding = new Padding(0);
+                            label.Location = new System.Drawing.Point(foundLocation.x - 11, foundLocation.y - 16);
+                            label.Text = (index+1).ToString();
+                            pictureBox1.Controls.Add(label);
+
+                            // Add to respective lists
+                            customLabels.Add(label);
+                            locations.Add(foundLocation);
+                            index++;
+                        }
+                    }
+                }
+            }
         }
     }
 }
